@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<!-- Used dependencies in thir project are given below -->
+## Installed Dependencies for Project Requirements
+FOR design = antd, @ant-design/icons
+FOR app files architecture  = react-redux , @reduxjs/toolkit
+FOR API Request = axios
+FOR Chart = chart.js
+FOR parsing html data = html-react-parser
+FOR convert large number to readable = millify
+FOR parse time and date = moment
+FOR render chart from chart.js = react-chartjs-2
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -68,3 +79,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
