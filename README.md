@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <!-- Used dependencies in thir project are given below -->
 ## Installed Dependencies for Project Requirements
+FOR Routing = react-router-dom
 FOR design = antd, @ant-design/icons
 FOR app files architecture  = react-redux , @reduxjs/toolkit
 FOR API Request = axios
