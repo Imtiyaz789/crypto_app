@@ -29,7 +29,6 @@ const App = () => {
                             <Route exact path="/news">
                                 <News/>
                             </Route>
-                            
                         </Switch>
                     </div>
                 </Layout>
