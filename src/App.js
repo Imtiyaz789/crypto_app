@@ -10,6 +10,7 @@ const App = () => {
             <div className="navbar">
                 <Navbar />
             </div>
+            {/* This is main Content Section */}
             <div className="main">
                 <Layout>
                     <div className="routes">
@@ -32,11 +33,19 @@ const App = () => {
                         </Switch>
                     </div>
                 </Layout>
+                {/* this is footer section */}
+                <div className="footer">
+                    <Typography.Title level={5} style={{color: 'white', textAlign:'center'}}>
+                        Crypto App <br />
+                        All Rights Reserved
+                    </Typography.Title>
+                    <Space>
+                        <Link to="/">Home</Link>
+                        <Link to="/exchanges">Exchanges</Link>
+                        <Link to="/news">News</Link>
+                    </Space>
+                </div>
             </div>
-            <div className="footer">
-
-            </div>
-            
         </div>
     )
 }
