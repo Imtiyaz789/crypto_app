@@ -1,6 +1,7 @@
 {
   "name": "crypto_app",
   "version": "0.1.0",
+  "proxy": "https://cors-anywhere.herokuapp.com/https://api.coinranking.com/v2",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

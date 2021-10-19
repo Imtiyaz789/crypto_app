@@ -1,20 +1,25 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+// import axios from 'axios';
 
 const cryptoApiHeaders = {
-    'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-    'x-rapidapi-key': 'fa90a12b43msh54c793e50f10365p17a5f7jsnb061c5f50672'
-}
+    method: 'GET',
+    // mode: 'no-cors',
+    url: 'https://cors-anywhere.herokuapp.com/https://api.coinranking.com/v2',
+    headers: {
+      'x-access-token': 'coinrankinga8cb41c3390cc02c1cea1ebe71b9617b07af9352837093e6'
+    }
+};
 
-const baseUrl = 'https://coinranking1.p.rapidapi.com';
+const baseUrl = 'https://api.coinranking.com/v2';
 
-const createRequest = (url) => ({ url, header:cryptoApiHeaders});
+const createRequest = (url) => ({url, header:cryptoApiHeaders});
 
 export const cryptoApi = createApi({
     reducerPath: 'cryptoApi',
     baseQuery: fetchBaseQuery({baseUrl}),
     endpoints: (builder) => ({
         getCryptos: builder.query({
-            query: ()=> createRequest('/coins')
+            query: () => createRequest('/coins')
         })
     })
 })
