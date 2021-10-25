@@ -8,10 +8,13 @@ const{ Title, Text} = Typography;
 const {Option} = Select;
 
 const News = (simplified) => {
-    const {data : cryptoNews} = useGetCryptosNewsQuery({newsCategory : 'Cryptocurrency', count : simplified ? 10 : 100})
+    // const {data : cryptoNews, isFetching} = useGetCryptosNewsQuery({newsCategory : 'Cryptocurrency', count : simplified ? 10 : 100});
+
+    // console.log(cryptoNews);
+    // if(isFetching) return 'Loading...';
     return (
         <div>
-            News
+            
         </div>
     )
 }
