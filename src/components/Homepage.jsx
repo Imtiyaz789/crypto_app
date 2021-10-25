@@ -2,9 +2,10 @@ import React from 'react'
 import millify from 'millify'
 import { Typography, Row, Col, Statistic } from 'antd'
 import { Link } from 'react-router-dom'
-import { useGetCryptosQuery } from '../services/cryptoApi';
-import Cryptocurrencies from './Cryptocurrencies';
 import News from './News'
+import Cryptocurrencies from './Cryptocurrencies';
+import { useGetCryptosQuery } from '../services/cryptoApi';
+
 const {Title} = Typography;
 
 const Homepage = () => {
@@ -12,6 +13,7 @@ const Homepage = () => {
     const globalStats = data?.data?.stats;
 
     if(isFetching) return 'Loading...';
+    // console.log(globalStats);
 
     return (
         <>
@@ -37,4 +39,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+export default Homepage;

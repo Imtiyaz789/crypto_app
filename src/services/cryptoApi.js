@@ -1,15 +1,13 @@
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-// import axios from 'axios';
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const cryptoApiHeaders = {
     method: 'GET',
     // mode: 'no-cors',
-    url: 'https://cors-anywhere.herokuapp.com/https://api.coinranking.com/v2',
+    url: 'https://api.coinranking.com/v2',
     headers: {
       'x-access-token': 'coinrankinga8cb41c3390cc02c1cea1ebe71b9617b07af9352837093e6'
     }
 };
-
 const baseUrl = 'https://secret-ocean-49799.herokuapp.com/https://api.coinranking.com/v2';
 
 const createRequest = (url) => ({url, header:cryptoApiHeaders});
@@ -23,8 +21,11 @@ export const cryptoApi = createApi({
         }),
         getCryptosDetails: builder.query({
             query: (coinId) => createRequest(`/coin/${coinId}`)
+        }),
+        getCryptosHistory: builder.query({
+            query: (coinId, timePeriod) => createRequest(`/coin/${coinId}/history/${timePeriod}`)
         })
     })
 })
 
-export const {useGetCryptosQuery, useGetCryptosDetailsQuery} = cryptoApi;
+export const {useGetCryptosQuery, useGetCryptosDetailsQuery, useGetCryptosHistoryQuery} = cryptoApi;
