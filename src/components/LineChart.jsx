@@ -6,12 +6,12 @@ const {Title} = Typography;
 const LineChart = ({coinHistory, currentPrice, coinName}) => {
     const coinPrice = [];
     const coinTimestamp = [];
-    console.log({coinHistory, currentPrice, coinName});
+    
     for(let i = 0; i < coinHistory?.data?.histoy?.length; i += 1){
-        coinPrice.push(coinHistory.data.histoy[i].price);
+        coinPrice.push(coinHistory?.data?.histoy[i].price);
         coinTimestamp.push(new Date(coinHistory.data.histoy[i].timestamp).toLocaleDateString());
     }
-    
+
     const data = {
         labels : coinTimestamp,
         datasets: [
@@ -35,7 +35,9 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
             ]
         }
     }
-
+    // console.log({coinHistory});
+    // console.log(coinPrice, coinTimestamp );
+    console.log(coinHistory?.data?.histoy);
 
     return (
         <div>
