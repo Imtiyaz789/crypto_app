@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import Demo from './components/Loader'
 import {Switch, Link, Route} from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 import {Navbar, Homepage, CryptoDetails, Cryptocurrencies, Exchanges, News} from './components'
@@ -9,6 +10,7 @@ const App = () => {
         <div className="app">
             <div className="navbar">
                 <Navbar />
+                <Demo/>
             </div>
             {/* This is main Content Section */}
             <div className="main">

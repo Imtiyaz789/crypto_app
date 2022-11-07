@@ -3,16 +3,22 @@ import millify from 'millify';
 import { Collapse, Row, Col, Typography, Avatar } from 'antd';
 import HTMLReactParser from 'html-react-parser';
 
-import { useGetExchangesQuery } from '../services/cryptoApi';
+import { useGetExchangesQuery, useGetExchangeDetailsQuery } from '../services/cryptoApi';
 import Loader from './Loader';
+import { useParams } from 'react-router-dom';
 
 const { Text } = Typography;
 const { Panel } = Collapse;
 
 const Exchanges = () => {
+  const {coinId} = useParams();
+  const {data : exchangeDetails} = useGetExchangeDetailsQuery(coinId);
   const { data, isFetching } = useGetExchangesQuery();
   const exchangesList = data?.data?.exchanges;
+
+  const hourVolume = "24hVolume";
   console.log(exchangesList);
+  console.log(exchangeDetails);
 
   if (isFetching) return <Loader />;
   return (
@@ -24,7 +30,7 @@ const Exchanges = () => {
         <Col span={6}>Change</Col>
       </Row>
       <Row>
-        {exchangesList?.map((exchange) => (
+        {exchangesList.map((exchange) => (
           <Col span={24}>
             <Collapse>
               <Panel
@@ -37,7 +43,8 @@ const Exchanges = () => {
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
                       <Text><strong>{exchange.name}</strong></Text>
                     </Col>
-                    {/* <Col span={6}>${millify(exchange.{'24hVolume'})}</Col> */}
+                    <Col span={6}>${millify(hourVolume)}</Col>
+                    {/* <Col span={6}>$ {millify(exchange.olume)}</Col> */}
                     <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
                     <Col span={6}>{millify(exchange.marketShare)}%</Col>
                   </Row>

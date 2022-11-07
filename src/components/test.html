@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main">
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+      <p>paragraph</p>
+    </div>
+    <script>
+        var node = document.createElement("div");
+        var textnode = document.createTextNode('Content here ...')
+        node.appendChild(textnode);
+        node.id('custom-div')
+        var gotonode= document.getElementById("main").children[1]
+        gotonode.parentNode.insertBefore(node, gotonode.nextSibling)
+    //   function customobject() {
+    //     this.value = 2;
+    //   }
+    //   customobject.prototype.inc = function () {
+    //     this.value++;
+    //   };
+
+    //   function changer(func) {
+    //     func();
+    //   }
+
+    //   var o = new customobject();
+    //   alert(o.value); // o.value = 2
+    //   console.log('o.value', o.value);
+
+    //   o.inc();
+    //   alert(o.value); // o.value = 3
+    //   console.log('o', o.value);
+
+    //   changer(o.inc);
+    //   alert(o.value); // sorry, still just 3
+    //   console.log('changer', o.value);
+      const num = []; for (var i = 0; i < 4; i++);{ num.push(i + 1); } console.log(num);
+    </script>
+  </body>
+</html>
